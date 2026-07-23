@@ -13,7 +13,7 @@ SELECT
 	COUNT(DISTINCT po.order_id) AS orders,
 	SUM(revenue) AS total_revenue,
 	SUM(revenue) / COUNT(DISTINCT po.order_id) AS aov,
-	SUM(revenue) / COUNT(DISTINCT c.customer_unique) AS arrpu,
+	SUM(revenue) / COUNT(DISTINCT c.customer_unique) AS arpu,
 	COUNT(DISTINCT po.order_id)::numeric / COUNT(DISTINCT c.customer_unique) AS orders_per_user
 FROM 
 	payments_order po JOIN customers c ON po.customer_id = c.customer_id

@@ -29,9 +29,9 @@ SELECT
 		WHEN orders = 2 THEN '2 заказа'
 		WHEN orders = 3 THEN '3 заказа'
 		WHEN orders >= 4 THEN '4 и более'
-	END AS total,
-	SUM(revenue) AS revenue, 
-	ROUND(SUM(revenue) / MIN(total_revenue), 3)
+	END AS orders_group,
+	SUM(revenue) AS revenue,
+	ROUND(SUM(revenue) / MIN(total_revenue), 3) AS revenue_share
 FROM user_level, total_revenue
 GROUP BY 1
 ORDER BY 2 DESC

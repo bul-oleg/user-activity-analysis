@@ -7,6 +7,7 @@ WITH ranked AS (
 			ORDER BY order_date
 		) AS rn
 	FROM customers c JOIN orders o ON c.customer_id = o.customer_id
+	WHERE o.order_status = 'delivered'
 ),
 
 first_second AS (
